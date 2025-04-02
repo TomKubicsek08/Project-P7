@@ -96,3 +96,23 @@ switch (favoritePlatform) {
 const factOutput = document.createElement("p");
 factOutput.textContent = `Fun Fact about ${favoritePlatform}: ${platformFact}`;
 document.getElementById("social-media-impact").appendChild(factOutput);
+
+// --- Event Listener for Screen Time Check Button ---
+document.getElementById("check-screen-time").addEventListener("click", function () {
+    let message = "";
+  
+    if (totalWeeklyScreenTime > 49) {
+      message = "You are spending a lot of time on social media. Consider taking a break!";
+    } else if (totalWeeklyScreenTime > 30) {
+      message = "Your screen time is moderate. Try to take breaks and get outside!";
+    } else {
+      message = "Nice! Your screen time is in a healthy range.";
+    }
+  
+    // Show a popup message
+    alert(message);
+  
+    // Also display it on the page
+    document.getElementById("screen-time-feedback").textContent = message;
+  });
+  
